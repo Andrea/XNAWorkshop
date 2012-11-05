@@ -60,7 +60,7 @@ namespace Lab2
 			_turret = Content.Load<Texture2D>("turret");
 			
 			/* TODO: change _turretPosition so that it sets the turret exactly in the middle 
-			 * of the screen regarding X and 50 pixels  off the bottom of the screen
+			 * of the screen regarding X. And 50 pixels  off the bottom of the screen
 			 */
 			_turretPosition = new Vector2();
 			
