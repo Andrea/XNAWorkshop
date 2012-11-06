@@ -47,7 +47,7 @@ namespace Lab2
 			 * 
 			 * Hint: Bubble is a drawable component, needs to be added to a components collection
 			 */
-
+			
 			
 
 			base.Initialize();
@@ -184,7 +184,6 @@ namespace Lab2
 			 * a fixed pivot where the turret moved around
 			 */
 			
-
 			foreach (var bullet in _bullets)
 			{
 				_spriteBatch.Draw(_bulletTexture, bullet.Position, Color.Purple);

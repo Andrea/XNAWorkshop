@@ -62,7 +62,16 @@ namespace AnimatedSprites
 			//
 			//  _framesAcross
 			//  This value has been set up to contain the number of frames across, so you can tell when to loop back to the beginning.
-
+			_timeSinceLastFrameChanged += elapsedTime;
+			if( _timeSinceLastFrameChanged> _millisecondsPerFrame)
+			{
+				_timeSinceLastFrameChanged = _timeSinceLastFrameChanged - _millisecondsPerFrame;
+				_currentFrameX++;
+				if(_currentFrameX >= _framesAcross)
+				{
+					_currentFrameX = 0;
+				}
+			}
 			
 		}
 
@@ -81,7 +90,9 @@ namespace AnimatedSprites
 			// Todo:
 			// Complete this method so that it draws the correct frame of the texture that has been loaded into the _texture field.
 			//  Use the SpriteBatch.Draw method overload that accepts a sourceRectangle parameter to draw the correct frame.
-			
+
+			var sourceRectangle = new Rectangle(_currentFrameX*FrameWidth, _currentFrameY*FrameHeight, FrameWidth, FrameHeight);
+			spriteBatch.Draw(_texture, Position, sourceRectangle, Color.White);
 		}
 	}
 }

@@ -49,7 +49,7 @@ namespace AnimatedSprites
             //  a frame height of 65
             //  it should change frames a number of times a second (play with the number)
             //  it should use the mario2 texture
-			
+			_marioSprite = new AnimatedSprite(4,4,48,65,70, Content.Load<Texture2D>("mario2"));
 		}
 
 		protected override void UnloadContent()
@@ -87,6 +87,7 @@ namespace AnimatedSprites
 
 			if (keyboardState.IsKeyUp(Keys.Right) && keyboardState.IsKeyUp(Keys.Left) && keyboardState.IsKeyUp(Keys.Up) && keyboardState.IsKeyUp(Keys.Down))
 			{
+				_marioSprite.Reset();
 				// Todo:
                 // Call the Reset method of the _marioSprite instance so that the current frame resets back to 0 when no keys are pressed.
 			}
@@ -108,7 +109,7 @@ namespace AnimatedSprites
 
             // Todo:
             // Call the Update method of the _marioSprite instance, passing the elapsedTime value as its parameter.
-			
+			_marioSprite.Update(elapsedTime);
 
             // Don't modify this method below this comment.
 
@@ -127,7 +128,7 @@ namespace AnimatedSprites
 				{
 					// Todo:
 					// Call the Draw method of the _marioSprite instance, passing the _spriteBatch field as its only parameter.
-					
+					_marioSprite.Draw(_spriteBatch);
 				}
 
 				if (_grid[i] == false)

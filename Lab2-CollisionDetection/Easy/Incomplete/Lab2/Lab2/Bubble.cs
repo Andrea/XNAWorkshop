@@ -53,7 +53,7 @@ namespace Lab2
 
 			/* TODO: Update the position using the _direction vector and the DefaultSpeed
 			 */
-			
+			this._position += _direction*DefaultSpeed*(float)gameTime.ElapsedGameTime.TotalSeconds;
 
 			_boundingBox = new Rectangle((int)_position.X, (int)_position.Y,
 				(int)(_bubbleTexture.Width / _sizes[_divider]), (int)(_bubbleTexture.Height / _sizes[_divider]));
