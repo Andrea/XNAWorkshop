@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simpleanimaiton", "Simpleanimaiton\Simpleanimaiton\Simpleanimaiton.csproj", "{E73CD6B2-B7F5-4ED0-8C68-368A046DFF81}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "SimpleanimaitonContent", "Simpleanimaiton\SimpleanimaitonContent\SimpleanimaitonContent.contentproj", "{39F668D3-7987-4D80-A6AE-C48D1CC3B6DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E73CD6B2-B7F5-4ED0-8C68-368A046DFF81}.Debug|x86.ActiveCfg = Debug|x86
+		{E73CD6B2-B7F5-4ED0-8C68-368A046DFF81}.Debug|x86.Build.0 = Debug|x86
+		{E73CD6B2-B7F5-4ED0-8C68-368A046DFF81}.Release|x86.ActiveCfg = Release|x86
+		{E73CD6B2-B7F5-4ED0-8C68-368A046DFF81}.Release|x86.Build.0 = Release|x86
+		{39F668D3-7987-4D80-A6AE-C48D1CC3B6DA}.Debug|x86.ActiveCfg = Debug|x86
+		{39F668D3-7987-4D80-A6AE-C48D1CC3B6DA}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
