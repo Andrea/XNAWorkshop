@@ -20,6 +20,8 @@ namespace Behaviours
 			// We used this before :D. We are just updating the position based on distance and speed
 			Position += _direction * Speed;
 
+			/* TODO: Using what you learned about chasing, implement evading :)
+			 */
 		}
 	}
 }
