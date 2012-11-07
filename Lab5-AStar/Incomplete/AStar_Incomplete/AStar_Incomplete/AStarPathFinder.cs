@@ -26,8 +26,9 @@ namespace AStar_Incomplete
             
             while (true)
             {
-                /* TODO
-				 * if the open list has no nodes in it break out of the loop
+				if(!_openList.Any())
+					return;
+                /* TODO				 
                  * 
                  * Find the Node with the smallest F in the open list and set it to _currentNode
 				 * 
@@ -69,8 +70,7 @@ namespace AStar_Incomplete
 			if (_closedList.Any(n => n.CellIndex == adjacentCellIndex))
 				return;
 
-            if (OpenUpdatePathCost(parentNode, gCost, adjacentCellIndex))
-            	return;
+	        UpdatePathCost(adjacentCellIndex, parentNode, gCost);
 
         	AddAdjacentCellToOpenList(parentNode, gCost, adjacentCellIndex);
         }
@@ -86,22 +86,19 @@ namespace AStar_Incomplete
     		
     	}
 
-    	private bool OpenUpdatePathCost(Node parentNode, int gCost, int cellIndex)
+    	private void UpdatePathCost(int cellIndex, Node parentNode, int gCost)
     	{
     		var adjacentNode = _openList.SingleOrDefault(n => n.CellIndex == cellIndex);
-    		if (adjacentNode != null)
+    		
+    		if (parentNode.G + gCost < adjacentNode.G)
     		{
-    			if (parentNode.G + gCost < adjacentNode.G)
-    			{
-    				adjacentNode.Parent = parentNode;
-					/*
+    			adjacentNode.Parent = parentNode;
+    			/*
 					* TODO: calculate the values of G and H for adjacentNode
 					*/
     				
-    			}
-    			return true;
     		}
-    		return false;
+    		
     	}
     }
 }
