@@ -50,14 +50,15 @@ namespace Particles
 			 * Load the texture called "TriangleParticle" and assign it to the ParticleTexture property of the first emitter in the _sunParticleEffect instance.
 			 * Initialize _sunParticleEffect
 			 */
-
 			
 			// Hint:
 			// In Mercury, you can access the emitters of a particle system using array notation, i.e.
 			//  emitter[0], emitter[1] etc.
 			// This is just because of the way Mercury implements the ParticleEffect class. Its not something you need to know right now, but
 			//  it inherits from a collection class which overloads the [] operator.
-
+			_sunParticleEffect = Content.Load<ParticleEffect>("sun");
+			_sunParticleEffect[0].ParticleTexture = Content.Load<Texture2D>("triangleparticle");
+			_sunParticleEffect.Initialise();
 		}
 
 		protected override void UnloadContent()
@@ -74,6 +75,8 @@ namespace Particles
 			 * Trigger the _sunParticleEffect particle effect so that it emits particles from the center of the screen. 
 			 * Then update the effect passing the elapsed time in seconds.
 			 */
+			_sunParticleEffect.Trigger(_screenCenter);
+			_sunParticleEffect.Update((float) gameTime.ElapsedGameTime.TotalSeconds);
 
 		}
 
@@ -88,7 +91,7 @@ namespace Particles
 			
 			_spriteBatch.Begin();
 			base.Draw(gameTime);
-			
+			_particleRenderer.RenderEffect(_sunParticleEffect, _spriteBatch);
 			_spriteBatch.End();
 		}
 	}

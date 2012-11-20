@@ -1,4 +1,6 @@
-namespace Behaviours
+using System;
+
+namespace AStarPathFinding
 {
 #if WINDOWS || XBOX
     static class Program
@@ -8,7 +10,7 @@ namespace Behaviours
         /// </summary>
         static void Main(string[] args)
         {
-            using (BehavioursLab game = new BehavioursLab())
+            using (AStarLab game = new AStarLab())
             {
                 game.Run();
             }
